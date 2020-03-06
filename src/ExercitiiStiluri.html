@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercitii cu HTML si CSS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+<button id="button" class="text"> Try me, mofo!</button>
+<a id="linkFacebook" href="https://www.facebook.com"> Facebook </a>
+<a id="linkGoogle" href="https://www.google.com"> <img
+        src="macel-manele-regele-florin-salam-moarte-interlopi-sa-dispara-indienii-302669.jpg" width="300" height="200">
+</a>
+
+<div id="slide4" class="slide header">
+    <h1>The End</h1>
+</div>
+
+<div id="title" class=".element">
+    <h1> Se stie nebunie</h1>
+    <p> Dar si smecherie</p>
+</div>
+
+<div id="app">
+    <span v-bind:title="message"
+          v-bind:style="styleMessage">
+        Hover your mouse over me for a few seconds to see my dynamically bound title!<br>
+    </span>
+    <span v-bind:style="anotherStyleMessage">
+        A blue message!<br>
+    </span>
+    <span v-if="shouldAppear">
+        Text care ar trebui sa apara!<br>
+    </span>
+    <span v-if="shouldNotAppear">
+        Text care ar trebui sa dispara!<br>
+    </span>
+    <ol>
+        <li v-for="Masina in masini">
+            {{ Masina.numeDeMasina }}
+        </li>
+    </ol>
+    <ol>
+        <li v-for="Floare in flori">
+            {{ Floare.numeFloare }} ->
+            {{ Floare.culoare }}
+        </li>
+    </ol>
+    <button v-on:click="myButton"
+            v-on:mouseover="hoverFunction"> CE FACE BUTONUL ASTA??
+    </button>
+    <br>
+
+    Create a new account:
+    <input v-model="myObject.username">
+    <input v-model="myObject.password" type="password"><br>
+    <span v-if="myObject.password === 'youcannotguessit'">
+        Account validated, you may enter.</span>
+    {{ myObject }}<br>
+    Account details: <br>
+    Username: {{ myObject.username }}<br>
+    Password: {{ myObject.password }}
+    <ol>
+        <todo-item
+                v-for="elev in elevi"
+                v-bind:todo="elev"
+                v-bind:key="elev.id"
+        ></todo-item>
+    </ol>
+    <br>
+    {{ telefon }}
+    <br>
+    <input v-model="telefon.numeTelefon">
+    <br>
+    <button v-on:click="addTelefon()"> Adauga telefon</button>
+    <br>
+    {{ telefoane }}
+    <span v-for="telefon in telefoane">
+        <telefon-component></telefon-component>
+    </span>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="script.js"></script>
+</html>
