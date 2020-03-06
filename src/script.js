@@ -42,6 +42,7 @@ var app = new Vue({
         shouldAppear: true,
         shouldNotAppear: false,
         telefon: {
+            idTelefon: 0,
             numeTelefon: '',
         },
         telefoane: [],
@@ -92,6 +93,7 @@ var app = new Vue({
         addTelefon: function () {
             this.telefoane.push(
                 {
+                    id: this.telefon.idTelefon += 1,
                     nume: this.telefon.numeTelefon
                 });
             this.telefon.numeTelefon = '';

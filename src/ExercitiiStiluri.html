@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Exercitii cu HTML si CSS</title>
@@ -74,11 +74,13 @@
     <br>
     <input v-model="telefon.numeTelefon">
     <br>
-    <button v-on:click="addTelefon()"> Adauga telefon</button>
+    <button v-on:click="addTelefon()"
+    @click.prevent="incrementTelefon"> Adauga telefon</button>
     <br>
     {{ telefoane }}
     <span v-for="telefon in telefoane">
         <telefon-component></telefon-component>
+        {{telefon.nume}}<br>
     </span>
 </div>
 
