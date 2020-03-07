@@ -29,8 +29,8 @@ Vue.component('todo-item', {
 })
 
 Vue.component('telefonComponent', {
-    props: ['telefon'],
-    template: '<li> Am adaugat telefon </li>'
+    props: ['baba'],
+    template: '<li> Am adaugat telefon => {{baba.nume}} </li>'
 })
 
 var app = new Vue({

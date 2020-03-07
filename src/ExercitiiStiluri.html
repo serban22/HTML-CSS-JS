@@ -24,7 +24,7 @@
 </div>
 
 <div id="app">
-    <span v-bind:title="message"
+    <!--span v-bind:title="message"
           v-bind:style="styleMessage">
         Hover your mouse over me for a few seconds to see my dynamically bound title!<br>
     </span>
@@ -71,16 +71,17 @@
     </ol>
     <br>
     {{ telefon }}
-    <br>
+    <br-->
     <input v-model="telefon.numeTelefon">
     <br>
     <button v-on:click="addTelefon()"
-    @click.prevent="incrementTelefon"> Adauga telefon</button>
+            @click.prevent="incrementTelefon"> Adauga telefon
+    </button>
     <br>
     {{ telefoane }}
-    <span v-for="telefon in telefoane">
-        <telefon-component></telefon-component>
-        {{telefon.nume}}<br>
+
+    <telefon-component v-for="tele in telefoane" v-bind:baba="tele"></telefon-component>
+    {{telefon.nume}}<br>
     </span>
 </div>
 
